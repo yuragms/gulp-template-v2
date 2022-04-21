@@ -866,6 +866,7 @@ body.ie ._ibg img {
   width: 20px;
   background-color: #fff;
   height: 2px;
+  transition: transform 0.3s ease 0s;
   transform: translate(0, -50%) rotate(-45deg);
   position: absolute;
   right: 15px;
@@ -880,6 +881,13 @@ body.ie ._ibg img {
   position: absolute;
   right: 29px;
   top: 50%;
+  transition: transform 0.3s ease 0s;
+}
+.spollers-block__title._active::before {
+  transform: translate(0, -50%) rotate(45deg);
+}
+.spollers-block__title._active::after {
+  transform: translate(0, -50%) rotate(-45deg);
 }
 .spollers-block__body {
   padding: 20px 0px 0px 0px;
