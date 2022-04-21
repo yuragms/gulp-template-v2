@@ -37,39 +37,45 @@ $mainColor: #000;
 //<ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===============================================================================================
 @import "null";
 body {
-	color: $mainColor;
-	&._lock {
-		overflow: hidden;
-	}
+  color: $mainColor;
+  font-size: 20px;
+  line-height: 150%;
+  background-color: #333;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #fff;
+
+  &._lock {
+    overflow: hidden;
+  }
 }
 //</ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===============================================================================================
 
 //<ОБОЛОЧКА>===========================================================================================================
 .wrapper {
-	width: 100%;
-	min-height: 100%;
-	overflow: hidden;
-	display: flex;
-	flex-direction: column;
-	&._loaded {
-	}
+  width: 100%;
+  min-height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  &._loaded {
+  }
 }
 //</ОБОЛОЧКА>===========================================================================================================
 
 //<ОСНОВНАЯ СЕТКА>===========================================================================================================
 ._container {
-	max-width: $maxWidthContainer + px;
-	margin: 0 auto;
-	@media (max-width: $md1 + px) {
-		max-width: 970px;
-	}
-	@media (max-width: $md2+px) {
-		max-width: 750px;
-	}
-	@media (max-width: $md3+px) {
-		max-width: none;
-		padding: 0 10px;
-	}
+  max-width: $maxWidthContainer + px;
+  margin: 0 auto;
+  @media (max-width: $md1 + px) {
+    max-width: 970px;
+  }
+  @media (max-width: $md2+px) {
+    max-width: 750px;
+  }
+  @media (max-width: $md3+px) {
+    max-width: none;
+    padding: 0 10px;
+  }
 }
 //</ОСНОВНАЯ СЕТКА>===========================================================================================================
 
@@ -90,8 +96,96 @@ body {
 
 //<ОСНОВНОЙ БЛОК>====================================================================================================
 .page {
-	flex: 1 1 auto;
+  flex: 1 1 auto;
+  padding: 30px;
 }
 //===================================================================================================================================
+.tabs-block {
+  // .tabs-block_item
 
+  &_item {
+    flex: 0 1 33.333%;
+    margin: 0px 2px;
+    background-color: #7a956b;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    &._active {
+      background-color: #77608d;
+    }
+  }
+
+  // .tabs-block__nav
+
+  &__nav {
+    display: flex;
+    margin: 0px -2px;
+  }
+
+  // .tabs-block__body
+
+  &__body {
+    padding: 20px 0px 0px 0px;
+  }
+
+  // .tabs-block__block
+
+  &__block {
+    margin: 0px 0px 30px 0px;
+  }
+}
+//===================================================================================================================================
+.spollers-block {
+  // .spollers-block__item
+
+  &__item {
+  }
+
+  // .spollers-block__title
+
+  &__title {
+    // background-color: #794f45;
+    cursor: pointer;
+    padding: 20px;
+    position: relative;
+    &::before {
+      content: "";
+      width: 20px;
+      background-color: #fff;
+      height: 2px;
+      transform: translate(0, -50%) rotate(-45deg);
+      position: absolute;
+      right: 15px;
+      top: 50%;
+    }
+    &::after {
+      content: "";
+      width: 20px;
+      background-color: #fff;
+      height: 2px;
+      transform: translate(0, -50%) rotate(45deg);
+      position: absolute;
+      right: 29px;
+      top: 50%;
+    }
+  }
+
+  // .spollers-block__body
+
+  &__body {
+    padding: 20px 0px 0px 0px;
+  }
+}
+. {
+  // ._init
+
+  &_init {
+    &__title {
+      //   background-color: #794f45;
+      background-color: red;
+    }
+  }
+}
 //</ОСНОВНОЙ БЛОК>====================================================================================================
