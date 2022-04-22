@@ -85,9 +85,10 @@ body {
 //</ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ>====================================================================================================
 
 //<ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================
-//@import "datepicker";
-//@import "lightgallery";
-//@import "pagging";
+@import "datepicker";
+@import "lightgallery";
+@import "tippy";
+@import "nouislider";
 @import "popup";
 @import "header";
 @import "footer";
@@ -97,10 +98,31 @@ body {
 //<ОСНОВНОЙ БЛОК>====================================================================================================
 .page {
   flex: 1 1 auto;
-  padding: 30px;
+  padding: 100px 30px 30px 30px;
+  display: flex;
+
+  // .page__side
+
+  &__side {
+    flex: 0 0 300px;
+    padding: 0px 20px 0px 0px;
+  }
+
+  // .page__item
+
+  &__item {
+  }
+
+  // .page__body
+
+  &__body {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
 }
 //===================================================================================================================================
 .tabs-block {
+  margin: 0px 0px 50px 0px;
   // .tabs-block_item
 
   &_item {
@@ -138,9 +160,14 @@ body {
 }
 //===================================================================================================================================
 .spollers-block {
+  margin: 0px 0px 50px 0px;
   // .spollers-block__item
 
   &__item {
+    margin: 0px 0px 20px 0px;
+    &:last-child {
+      margin: 0px 0px 0px 0px;
+    }
   }
 
   // .spollers-block__title
@@ -148,7 +175,7 @@ body {
   &__title {
     background-color: #794f45;
     cursor: pointer;
-    padding: 20px;
+    padding: 20px 70px 20px 20px;
     position: relative;
     &::before {
       content: "";
@@ -188,14 +215,78 @@ body {
     padding: 20px 0px 0px 0px;
   }
 }
-// . {
-//   // ._init
+//===================================================================================================================================
+.form {
+  margin: 0px 0px 50px 0px;
+  // .form__line
 
-//   &_init {
-//     &__title {
-//       //   background-color: #794f45;
-//       background-color: red;
-//     }
-//   }
-// }
+  &__line {
+    margin: 0px 0px 20px 0px;
+  }
+
+  // .form__label
+
+  &__label {
+    display: inline-block;
+    margin: 0px 0px 15px 0px;
+  }
+}
+.input {
+}
+//===================================================================================================================================
+.slider {
+  margin: 0px 0px 50px 0px;
+}
+//===================================================================================================================================
+.text {
+  margin: 0px 0px 50px 0px;
+
+  transform: translate(0px, 100px);
+  opacity: 0;
+  transition: all 0.3s ease 0s;
+  a {
+    color: red;
+  }
+  &._active {
+    transform: translate(0px, 0px);
+    opacity: 1;
+  }
+}
+//===================================================================================================================================
+
+.price {
+  // .price__range
+
+  &__range {
+  }
+
+  // .price__inputs
+
+  &__inputs {
+    display: flex;
+    input {
+      margin: 0px 10px 0px 0px;
+    }
+  }
+}
+
+//===================================================================================================================================
+
+.gallery-block {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0px -10px;
+
+  // .gallery-block__item
+
+  &__item {
+    margin: 0px 0px 20px 0px;
+    flex: 0 1 33.333%;
+    padding: 0px 10px;
+    img {
+      max-width: 100%;
+    }
+  }
+}
+
 //</ОСНОВНОЙ БЛОК>====================================================================================================
